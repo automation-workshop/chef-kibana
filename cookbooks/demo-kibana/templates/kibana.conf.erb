@@ -1,0 +1,13 @@
+description "kibana"
+author "Patrick Lenz <plenz@topmedia.de>"
+
+start on local-filesystems
+stop on shutdown
+
+respawn
+respawn limit 10 5
+
+script
+cd /usr/local/kibana
+./bin/kibana >> /var/log/kibana.log 2>&1
+end script
