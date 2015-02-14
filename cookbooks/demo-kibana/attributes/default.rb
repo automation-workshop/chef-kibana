@@ -1,4 +1,5 @@
 node.set[:elasticsearch][:version] = '1.4.3'
+node.set[:elasticsearch][:path][:data] = '/esdata'
 
 node.set[:java][:jdk_version] = '7'
 node.set[:kibana][:version] = "4.0.0-rc1"

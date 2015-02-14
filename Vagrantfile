@@ -7,6 +7,8 @@ Vagrant.configure(2) do |config|
   config.vm.define config.vm.hostname
 
   config.vm.network "private_network", ip: "192.168.50.5"
+  config.vm.synced_folder "esdata/", "/esdata",
+    owner: 'elasticsearch', group: 'elasticsearch', create: true
 
   config.vm.provider "virtualbox" do |vb|
     vb.name = config.vm.hostname
